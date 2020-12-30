@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nodejs
+  labels:
+    app.kubernetes.io/name: app
+    app.kubernetes.io/instance: nodejs
+    app.kubernetes.io/version: "1.16.0"
+spec:
+  rules:
+    - host: 
+      http:
+        paths:
+          - path: /nodejs
+            backend:
+              serviceName: ecsdemo-nodejs
+              servicePort: 80
